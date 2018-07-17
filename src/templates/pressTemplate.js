@@ -24,7 +24,7 @@ export default function Template({
 }
 
 export const pageQuery = graphql`
-  query BlogPostByPath($id: String!) {
+  query PressPostByPath($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html

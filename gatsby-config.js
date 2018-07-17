@@ -7,6 +7,13 @@ module.exports = {
               name: "markdown-pages",
             },
         },
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+              path: `${__dirname}/content/press`,
+              name: 'press',
+            },
+          },
         `gatsby-transformer-remark`,
         `gatsby-plugin-netlify-cms`,
     ],

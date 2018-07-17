@@ -1,6 +1,5 @@
 backend:
   name: git-gateway
-  branch: master
 
 media_folder: static/assets
 public_folder: assets
@@ -8,10 +7,82 @@ public_folder: assets
 collections:
   - name: blog
     label: Blog
-    folder: "content/blog"
+    folder: "src/blog"
     create: true
     fields:
-      - { name: path, label: Path }
+      - { name: basePath, hidden: true, default: blog}
+      - { name: templateKey, hidden: true, default: blogTemplate}
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
+  - name: "commision" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Commision" # Used in the UI, ie.: "New Post"
+    folder: "site/content/commision" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "date"}
+      - {label: "Main Image", name: "mainImage", widget: "image"}
+      - {label: "Description", name: "description", widget: "markdown"}
+      - label: "Gallery"
+        name: "galleryImages"
+        widget: "list"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Created Date", name: "date", widget: "date"}
+          - {label: "Image", name: "image", widget: "image"}
+          - {label: "Description", name: "description", widget: "text"}
+      - label: "Company"
+        name: "company"
+        widget: "object"
+        fields: 
+          - {label: "Name", name: "name", widget: "string"}
+          - {label: "Url", name: "url", widget: "string"}
+          - {label: "Reference", name: "reference", widget: "string"}
+  - name: "movie" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Movie" # Used in the UI, ie.: "New Post"
+    folder: "src/movie" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Created Date", name: "date", widget: "date"}
+      - {label: "Main Image", name: "mainImage", widget: "image"}
+      - {label: "Description", name: "description", widget: "markdown"}
+      - label: "Gallery"
+        name: "galleryImages"
+        widget: "list"
+        fields:
+          - {label: Image, name: image, widget: image}
+  - name: "portfolio" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Portfolio" # Used in the UI, ie.: "New Post"
+    folder: "site/content/portfolio" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    editor:
+     preview: false
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Main Image", name: "mainImage", widget: "image"}
+      - label: "Pieces"
+        name: "pieces"
+        widget: "list"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Created Date", name: "date", widget: "date"}
+          - {label: "Image", name: "image", widget: "image"}
+          - {label: "Description", name: "description", widget: "text", required: false}
+  - name: "press" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Press" # Used in the UI, ie.: "New Post"
+    folder: "site/content/press" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - label: "Publication"
+        name: "publication"
+        widget: "object"
+        fields: 
+          - {label: "Name", name: "name", widget: "string"}
+          - {label: "Url", name: "url", widget: "string"}
+          - {label: "Reference", name: "reference", widget: "string"}
+      - {label: "Publication date", name: "publicationDate", widget: "date"}
+      - {label: "Article link", name: "articleLink", widget: "string"}
+      - {label: "Excerpt", name: "excerpt", widget: "markdown"}
+      - {label: "Article file", name: "articleFile", widget: "file"}

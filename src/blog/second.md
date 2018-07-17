@@ -1,5 +1,6 @@
 ---
-path: /content/blog/second
+basePath: blog
+templateKey: blogTemplate
 date: '2018-07-08'
 title: Second
 ---
