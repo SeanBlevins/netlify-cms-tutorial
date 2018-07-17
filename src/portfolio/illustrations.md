@@ -2,19 +2,19 @@
 basePath: portfolio
 templateKey: portfolioTemplate
 title: Illustrations
-mainImage: /assets/-.jpg
+mainImage: /src/-.jpg
 pieces:
   - date: '2018-06-21'
     description: Old farts
-    image: /assets/-.jpg
+    image: /src/-.jpg
     title: Gone with the wind
   - date: '2018-06-27'
     description: Cute doggy
-    image: /assets/1 (2).jpg
+    image: /src/1 (2).jpg
     title: Nibbler
   - date: '2018-06-27'
     description: Creepy pub
-    image: /assets/1.jpg
+    image: /src/1.jpg
     title: Franks Creation
 ---
 
