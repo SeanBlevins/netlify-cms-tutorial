@@ -3,14 +3,14 @@ module.exports = {
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-              path: `${__dirname}/content/blog`,
+              path: `${__dirname}/src/blog`,
               name: "markdown-pages",
             },
         },
         {
             resolve: 'gatsby-source-filesystem',
             options: {
-              path: `${__dirname}/content/press`,
+              path: `${__dirname}/src/press`,
               name: 'press',
             },
           },
