@@ -1,4 +1,6 @@
 ---
+basePath: portfolio
+templateKey: portfolioTemplate
 title: Paintings
 mainImage: /assets/2.jpg
 pieces:
